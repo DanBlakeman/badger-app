@@ -1,0 +1,18 @@
+version: '2'
+services:
+  proxy:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf:ro"
+    links:
+      - web
+  web:
+    build: .
+    volumes:
+     - .:/code
+    depends_on:
+     - redis
+  redis:
+    image: redis
