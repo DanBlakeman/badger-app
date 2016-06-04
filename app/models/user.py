@@ -1,8 +1,13 @@
-from sqlalchemy import Column, String, Integer, ForeignKey
-from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
+from app import db
 
-class User(object):
+class User(db.Model):
   """Holds information of the members of the site"""
-  self.
+  __tablename__ = 'users'
 
+  id = db.Column(db.Integer, primary_key=True)
+  email = db.Column(db.String())
+  first_name = db.Column(db.String())
+  surname = db.Column(db.String())
+
+  def __repr__(self):
+    return '<id {}>'.format(self.id)
