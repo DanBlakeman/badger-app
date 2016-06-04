@@ -1,0 +1,14 @@
+machine:
+  python:
+    version: 3.5.0
+  environment:
+    DATABASE_URL: postgres://ubuntu:@127.0.0.1:5432/circle_test
+    FLASK_ENV: test
+
+dependencies:
+  override:
+   - cd app && pip install -r requirements.txt
+
+test:
+  override:
+    - cd app && py.test
