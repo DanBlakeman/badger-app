@@ -1,4 +1,4 @@
-from user import User
+from models.user import User
 
 
 def test_user_should_have_correct_repr():
