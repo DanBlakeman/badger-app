@@ -1,8 +1,8 @@
-FROM python:2.7
+FROM python:3.5
 
-ADD ./src /src
+ADD . /app
 
-WORKDIR /src
+WORKDIR /app
 
 RUN pip install -r requirements.txt
 

@@ -9,9 +9,9 @@ services:
     links:
       - web
   web:
-    build: .
+    build: ./app
     volumes:
-     - .:/code
+     - ./app:/app
     depends_on:
      - redis
   redis:
