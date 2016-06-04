@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+
 app = Flask(__name__)
 app.config.from_object('config.default')
 env = os.environ.get('FLASK_ENV') or 'development'
@@ -10,7 +11,8 @@ app.config['ENV'] = env
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-from models import user
+import models
+
 
 @app.route('/')
 def hello_world():
