@@ -16,7 +16,7 @@ import models
 
 @app.route('/')
 def hello_world():
-  return 'Hello World! This page has been viewed times. Currently running in %s' \
+  return 'Hello World! This page is live. Currently running in %s' \
        % app.config['ENV']
 
 if __name__ == '__main__':
