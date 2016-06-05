@@ -13,7 +13,7 @@ services:
   web:
     build: ./app
     environment:
-      DATABASE_URL: postgres://badger:thoupass@postgres/badger
+      DATABASE_URL: postgres://badger:thoupass@postgres/badger_development
     volumes:
       - ./app:/app
     depends_on:

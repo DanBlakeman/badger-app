@@ -5,9 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config.from_object('config.default')
-env = os.environ.get('FLASK_ENV') or 'development'
-app.config.from_object('config.' + env)
-app.config['ENV'] = env
+app.config.from_object('config.' + app.config['ENV'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -16,7 +14,7 @@ import models
 
 @app.route('/')
 def hello_world():
-  return 'Hello World! This page is live. Currently running in %s' \
+    return 'Hello World! This page is live. Currently running in %s' \
        % app.config['ENV']
 
 if __name__ == '__main__':
