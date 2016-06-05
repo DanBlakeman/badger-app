@@ -7,7 +7,7 @@ echo "rebuilding web container"
 ssh $DEPLOY_USER@$DEPLOY_HOST 'docker-compose build web'
 
 echo "restarting web container"
-ssh $DEPLOY_USER@$DEPLOY_HOST 'docker-compose up --no-deps -d web'
+ssh $DEPLOY_USER@$DEPLOY_HOST 'docker-compose up -f docker-compose.yml -f docker-compose.production.yml --no-deps -d web '
 
 echo "success!"
 
